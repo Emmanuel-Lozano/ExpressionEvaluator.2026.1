@@ -10,6 +10,9 @@ public class Evaluator
         return EvaluatePostfix(postfix);
     }
 
+    private const string PI_VALUE = "3.141592653589793238";
+    private const string E_VALUE = "2.718281828459045235";
+
     private static List<string> ExtractParts(string infix)
     {
         var parts = new List<string>();
@@ -17,6 +20,19 @@ public class Evaluator
 
         foreach (var x in infix)
         {
+
+            if (x == 'p')
+            {
+                parts.Add(PI_VALUE);
+                continue;
+            }
+
+            if (x == 'e')
+            {
+                parts.Add(E_VALUE);
+                continue;
+            }
+
             if (char.IsDigit(x) || x == '.')
             {
                 number += x;

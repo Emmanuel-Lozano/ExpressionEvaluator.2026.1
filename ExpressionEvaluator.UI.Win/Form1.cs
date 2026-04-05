@@ -33,6 +33,9 @@ namespace ExpressionEvaluator.UI.Win
             btnDelete = new Button();
             btnClear = new Button();
             btnPow = new Button();
+            btnPi = new Button();
+            btnSquare = new Button();
+            btnE = new Button();
             SuspendLayout();
             // 
             // txtDisplay
@@ -43,7 +46,7 @@ namespace ExpressionEvaluator.UI.Win
             txtDisplay.ForeColor = Color.White;
             txtDisplay.Location = new Point(12, 12);
             txtDisplay.Name = "txtDisplay";
-            txtDisplay.Size = new Size(363, 39);
+            txtDisplay.Size = new Size(559, 39);
             txtDisplay.TabIndex = 0;
             // 
             // btn7
@@ -224,7 +227,7 @@ namespace ExpressionEvaluator.UI.Win
             btnEquals.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEquals.Location = new Point(174, 257);
             btnEquals.Name = "btnEquals";
-            btnEquals.Size = new Size(201, 56);
+            btnEquals.Size = new Size(397, 56);
             btnEquals.TabIndex = 19;
             btnEquals.Text = "=";
             btnEquals.UseVisualStyleBackColor = false;
@@ -257,9 +260,9 @@ namespace ExpressionEvaluator.UI.Win
             btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnDelete.BackColor = Color.FromArgb(255, 128, 0);
             btnDelete.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(282, 71);
+            btnDelete.Location = new Point(336, 71);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(93, 56);
+            btnDelete.Size = new Size(235, 56);
             btnDelete.TabIndex = 20;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
@@ -270,9 +273,9 @@ namespace ExpressionEvaluator.UI.Win
             btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnClear.BackColor = Color.FromArgb(255, 128, 0);
             btnClear.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.Location = new Point(282, 133);
+            btnClear.Location = new Point(336, 133);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(93, 56);
+            btnClear.Size = new Size(235, 56);
             btnClear.TabIndex = 21;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
@@ -283,18 +286,57 @@ namespace ExpressionEvaluator.UI.Win
             btnPow.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnPow.BackColor = Color.FromArgb(255, 128, 0);
             btnPow.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPow.Location = new Point(282, 195);
+            btnPow.Location = new Point(336, 195);
             btnPow.Name = "btnPow";
-            btnPow.Size = new Size(93, 56);
+            btnPow.Size = new Size(235, 56);
             btnPow.TabIndex = 22;
             btnPow.Text = "^";
             btnPow.UseVisualStyleBackColor = false;
             btnPow.Click += btnPow_Click;
             // 
+            // btnPi
+            // 
+            btnPi.BackColor = Color.FromArgb(255, 128, 0);
+            btnPi.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPi.Location = new Point(282, 71);
+            btnPi.Name = "btnPi";
+            btnPi.Size = new Size(48, 56);
+            btnPi.TabIndex = 23;
+            btnPi.Text = "π";
+            btnPi.UseVisualStyleBackColor = false;
+            btnPi.Click += btnPi_Click;
+            // 
+            // btnSquare
+            // 
+            btnSquare.BackColor = Color.FromArgb(255, 128, 0);
+            btnSquare.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSquare.Location = new Point(282, 195);
+            btnSquare.Name = "btnSquare";
+            btnSquare.Size = new Size(48, 56);
+            btnSquare.TabIndex = 24;
+            btnSquare.Text = "√";
+            btnSquare.UseVisualStyleBackColor = false;
+            btnSquare.Click += btnSquare_Click;
+            // 
+            // btnE
+            // 
+            btnE.BackColor = Color.FromArgb(255, 128, 0);
+            btnE.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnE.Location = new Point(282, 133);
+            btnE.Name = "btnE";
+            btnE.Size = new Size(48, 56);
+            btnE.TabIndex = 25;
+            btnE.Text = "e";
+            btnE.UseVisualStyleBackColor = false;
+            btnE.Click += btnE_Click;
+            // 
             // Form1
             // 
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(387, 326);
+            ClientSize = new Size(583, 326);
+            Controls.Add(btnE);
+            Controls.Add(btnSquare);
+            Controls.Add(btnPi);
             Controls.Add(btnPow);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
@@ -350,6 +392,9 @@ namespace ExpressionEvaluator.UI.Win
         private Button btnDelete;
         private Button btnClear;
         private Button btnPow;
+        private Button btnPi;
+        private Button btnSquare;
+        private Button btnE;
         private Button btn1;
 
         private void btn7_Click(object sender, EventArgs e)
@@ -456,5 +501,21 @@ namespace ExpressionEvaluator.UI.Win
         {
             txtDisplay.Text = string.Empty;
         }
+
+        private void btnPi_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "p";
+        }
+
+        private void btnE_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text+= "e";
+        }
+
+        private void btnSquare_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "^(0.5)";
+        }
+
     }
 }
